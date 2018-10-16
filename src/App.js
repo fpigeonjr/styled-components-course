@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import Button from "./components/common/Button";
 import { ThemeProvider } from "styled-components";
 import LightTheme from "./themes/Light";
 import DarkTheme from "./themes/Dark";
+import PasswordInput from "./components/common/PasswordInput";
 
 class App extends Component {
   state = {
@@ -20,7 +19,11 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <Button onClick={() => this.changeTheme()}>My Button</Button>
+        <>
+          <PasswordInput />
+          <br />
+          <Button onClick={() => this.changeTheme()}>My Button</Button>
+        </>
       </ThemeProvider>
     );
   }
