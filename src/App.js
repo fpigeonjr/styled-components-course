@@ -7,7 +7,8 @@ import PasswordInput from "./components/common/PasswordInput";
 
 class App extends Component {
   state = {
-    theme: LightTheme
+    theme: LightTheme,
+    showPassword: false
   };
 
   changeTheme = () => {
@@ -16,14 +17,21 @@ class App extends Component {
     });
   };
 
+  togglePassword = () => {
+    this.setState({
+      showPassword: !this.state.showPassword
+    });
+  };
+
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <>
-          <PasswordInput />
-          <br />
-          <Button onClick={() => this.changeTheme()}>My Button</Button>
-        </>
+        <section>
+          <PasswordInput showPassword={this.state.showPassword} />
+          <Button onClick={() => this.togglePassword()}>
+            {this.state.showPassword ? "Hide" : "Show"}
+          </Button>
+        </section>
       </ThemeProvider>
     );
   }
