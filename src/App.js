@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Button from "./components/common/Button";
+import { Button } from "reactstrap";
+import PrimaryButton from "./components/common/PrimaryButton";
 import { ThemeProvider } from "styled-components";
 import LightTheme from "./themes/Light";
 import DarkTheme from "./themes/Dark";
@@ -27,10 +28,8 @@ class App extends Component {
     return (
       <ThemeProvider theme={this.state.theme}>
         <section>
-          <PasswordInput showPassword={this.state.showPassword} />
-          <Button onClick={() => this.togglePassword()}>
-            {this.state.showPassword ? "Hide" : "Show"}
-          </Button>
+          <Button color="primary">Bootstrap Button</Button>
+          <PrimaryButton>Primary Button</PrimaryButton>
         </section>
       </ThemeProvider>
     );
