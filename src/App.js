@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import LightTheme from "./themes/Light";
 import Button from "./components/common/Button";
 import { createGlobalStyle } from "styled-components";
+import Spinner from "./components/common/Spinner";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -23,13 +24,9 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <>
-          <GlobalStyle />
-          <section>
-            <Button>My Button</Button>
-            <LoginWithFacebookButton>Facebook Button</LoginWithFacebookButton>
-          </section>
-        </>
+        <section>
+          <Spinner />
+        </section>
       </ThemeProvider>
     );
   }
